@@ -128,55 +128,58 @@ export default function ModelosSlider() {
           style={{ width: '300px', height: '400px' }}
           className="relative overflow-hidden"
         >
-            {/* Imagen de fondo */}
-            <div className="absolute inset-0 z-0">
-              <Image
-                src={modelo.bgImage}
-                alt={`Fondo de ${modelo.name}`}
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-              />
-              {/* Gradiente superpuesto */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: 'linear-gradient(to top, #0f2027, #203a4300, #2c536400)',
-                }}
-              />
-            </div>
-            <div className="relative z-10 flex flex-col justify-end h-full">
-                <span className="model w-1/2" style={{ backgroundColor: modelo.color, color: modelo.text }}>
-                {modelo.name}
-                </span>
-                <div className='px-4 py-7'>
-                  <div className="flex gap-4">
-                      <div className="flex flex-col justify-center items-center">
-                      <Image src="/images/icons8-cama-48.png" alt="Bed" width={20} height={20} />
-                      <span className="text-white">{modelo.features.beds}</span>
+            <Link href={modelo.link}>
+              {/* Imagen de fondo */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src={modelo.bgImage}
+                  alt={`Fondo de ${modelo.name}`}
+                  layout="fill"
+                  objectFit="cover"
+                  quality={100}
+                />
+                {/* Gradiente superpuesto */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(to top, #0f2027, #203a4300, #2c536400)',
+                  }}
+                />
+              </div>
+
+              <div className="relative z-10 flex flex-col justify-end h-full">
+                    <span className="model w-1/2" style={{ backgroundColor: modelo.color, color: modelo.text }}>
+                    {modelo.name}
+                    </span>
+                    <div className='px-4 py-7'>
+                      <div className="flex gap-4">
+                          <div className="flex flex-col justify-center items-center">
+                          <Image src="/images/icons8-cama-48.png" alt="Bed" width={20} height={20} />
+                          <span className="text-white">{modelo.features.beds}</span>
+                          </div>
+                          <div className="flex flex-col justify-center items-center">
+                          <Image src="/images/icons8-ducha-64.png" alt="Shower" width={20} height={20} />
+                          <span className="text-white">{modelo.features.showers}</span>
+                          </div>
+                          {modelo.features.flexroom && (
+                          <div className="flex flex-col justify-center items-center">
+                              <Image src="/images/icons8-sofá-48.png" alt="Flexroom" width={20} height={20} />
+                              <span className="text-white">Flexroom</span>
+                          </div>
+                          )}
+                          {modelo.features.roofgarden && (
+                          <div className="flex flex-col justify-center items-center">
+                              <Image src="/images/icons8-terrace-64.png" alt="Roofgarden" width={20} height={20} />
+                              <span className="text-white">Roofgarden</span>
+                          </div>
+                          )}
                       </div>
-                      <div className="flex flex-col justify-center items-center">
-                      <Image src="/images/icons8-ducha-64.png" alt="Shower" width={20} height={20} />
-                      <span className="text-white">{modelo.features.showers}</span>
-                      </div>
-                      {modelo.features.flexroom && (
-                      <div className="flex flex-col justify-center items-center">
-                          <Image src="/images/icons8-sofá-48.png" alt="Flexroom" width={20} height={20} />
-                          <span className="text-white">Flexroom</span>
-                      </div>
-                      )}
-                      {modelo.features.roofgarden && (
-                      <div className="flex flex-col justify-center items-center">
-                          <Image src="/images/icons8-terrace-64.png" alt="Roofgarden" width={20} height={20} />
-                          <span className="text-white">Roofgarden</span>
-                      </div>
-                      )}
-                  </div>
-                  <Link href={modelo.link} className="text-white underline inline-block">
-                      Ver más
-                  </Link>
-                </div>
-            </div>
+                      <Link href={modelo.link} className="text-white underline inline-block">
+                          Ver más
+                      </Link>
+                    </div>
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

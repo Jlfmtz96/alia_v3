@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { stories } from "./StoryData";
 import Image from "next/image";
+import MouseCircle from "./MouseCircle"; // Importa el nuevo componente
 
 export default function Story() {
   const [activeStory, setActiveStory] = useState(0);
@@ -12,6 +13,7 @@ export default function Story() {
   const contentUpdateDelay = 0.4;
   const imgContainerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
+  const storyContainerRef = useRef<HTMLDivElement>(null); // Ref para el contenedor del Story
 
   const storyDuration = 5000; // 5 segundos, puedes ajustar esto según tus necesidades
 
@@ -69,7 +71,8 @@ export default function Story() {
   };
 
   return (
-    <div id="amenidades" className="story-container bg-black">
+    <div id="amenidades" className="story-container bg-black" ref={storyContainerRef}>
+      <MouseCircle containerRef={storyContainerRef} /> {/* Pasa la ref del contenedor */}
       <div className="story-img" ref={imgContainerRef}>
         <Image
           src={currentImage}
@@ -104,14 +107,14 @@ export default function Story() {
           ))}
         </div>
 
-        <div className="indexes">
+        {/* <div className="indexes">
           {stories.map((_, index) => (
             <div
               key={index}
               className={`index ${index === activeStory ? "index-highlight" : ""}`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

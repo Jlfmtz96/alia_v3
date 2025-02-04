@@ -13,11 +13,11 @@ type NavLink = {
 
 // Lista de enlaces de navegación
 const navLinks: NavLink[] = [
-  { name: "Nosotros", href: "#nosotros" },
-  { name: "Amenidades", href: "#amenidades" },
-  { name: "Modelos", href: "#modelos" },
-  { name: "Contacto", href: "#contacto" },
-  { name: "Entorno", href: "#entorno" },
+  { name: "Nosotros", href: "/#nosotros" },
+  { name: "Amenidades", href: "/#amenidades" },
+  { name: "Modelos", href: "/#modelos" },
+  { name: "Contacto", href: "/#contacto" },
+  { name: "Entorno", href: "/#entorno" },
 ];
 
 export default function Navbar() {
