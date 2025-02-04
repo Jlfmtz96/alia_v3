@@ -30,7 +30,7 @@ export default function Footer() {
             *Imágenes y renders mostrados en este sitio son estrictamente de carácter ilustrativo. Los proyectos podrán cambiar o sufrir de modificaciones de acuerdo al desarrollador. Sujeto a cambios sin previo aviso. Consulta prototipos y amenidades disponibles con tu asesor.
         </div>
         <div className="text-xs lg:text-sm text-center text-white">
-            Copyright 2025 Alía Residencial | <Link href="" className="font-medium">Aviso de Privacidad</a>
+            Copyright 2025 Alía Residencial | <Link href="" className="font-medium">Aviso de Privacidad</Link>
         </div>
     </footer>
   );
