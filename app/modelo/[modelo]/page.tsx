@@ -4,6 +4,7 @@ import Navbar from "@/app/components/Navbar";
 import Layout from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata, ResolvingMetadata } from "next"; // Importa los tipos de Next.js
 
 // Define el tipo de los parámetros
 interface ModelPageParams {
@@ -15,7 +16,35 @@ interface ModelPageProps {
   params: ModelPageParams;
 }
 
-// Asegúrate de que tu función sea asíncrona
+// Función para generar metadatos dinámicos
+export async function generateMetadata(
+  { params }: { params: ModelPageParams },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // Accede a los parámetros
+  const modelo = params.modelo;
+
+  // Busca el modelo en los datos
+  const model = houseModels.find((m) => m.id === modelo);
+
+  // Si no se encuentra el modelo, devuelve metadatos por defecto
+  if (!model) {
+    return {
+      title: "Modelo no encontrado",
+    };
+  }
+
+  // Devuelve los metadatos dinámicos
+  return {
+    title: `Modelo ${model.name}`,
+    description: `Descubre el modelo ${model.name} ubicado en ${model.location}.`,
+    openGraph: {
+      images: [model.images.hero],
+    },
+  };
+}
+
+// Componente de la página
 const ModelPage = async ({ params }: ModelPageProps) => {
   // Busca el modelo en los datos
   const model = houseModels.find((m) => m.id === params.modelo);
