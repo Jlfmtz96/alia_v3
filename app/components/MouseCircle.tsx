@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 interface MouseCircleProps {
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const MouseCircle = ({ containerRef }: MouseCircleProps) => {
@@ -48,8 +48,8 @@ const MouseCircle = ({ containerRef }: MouseCircleProps) => {
         left: `${position.x}px`,
         top: `${position.y}px`,
         transform: "translate(-50%, -50%)",
-        width: "90px",
-        height: "90px",
+        width: "40px",
+        height: "40px",
         borderRadius: "50%",
         backgroundColor: "rgba(255, 255, 255, 0.5)",
         pointerEvents: "none",
@@ -59,7 +59,7 @@ const MouseCircle = ({ containerRef }: MouseCircleProps) => {
         zIndex: 1000,
       }}
     >
-      <span style={{ fontSize: "32px", fontWeight: "300px" }}>{direction}</span>
+      <span style={{ fontSize: "24px", fontWeight: "bold" }}>{direction}</span>
     </div>
   );
 };
