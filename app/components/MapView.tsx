@@ -37,14 +37,14 @@ const placesCoordinates: Record<PlacesCategories, Place[]> = {
 //     onClick: () => void;
 // }
 
-const FilterButton: React.FC<FilterButtonProps> = ({ label, icon, onClick }) => (
-    <button className="flex flex-col group items-center" onClick={onClick}>
-        <div className="rounded-full border border-neutral-900 group-hover:bg-neutral-800 group-hover:text-white w-10 h-10 flex items-center justify-center">
-            {icon}
-        </div>
-        <span className="text-xs">{label}</span>
-    </button>
-);
+// const FilterButton: React.FC<FilterButtonProps> = ({ label, icon, onClick }) => (
+//     <button className="flex flex-col group items-center" onClick={onClick}>
+//         <div className="rounded-full border border-neutral-900 group-hover:bg-neutral-800 group-hover:text-white w-10 h-10 flex items-center justify-center">
+//             {icon}
+//         </div>
+//         <span className="text-xs">{label}</span>
+//     </button>
+// );
 
 export const MapView: React.FC = () => {
     const [filter, setFilter] = useState<PlacesCategories | null>(null);
