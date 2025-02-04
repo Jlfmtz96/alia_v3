@@ -31,11 +31,11 @@ const placesCoordinates: Record<PlacesCategories, Place[]> = {
     ],
 };
 
-interface FilterButtonProps {
-    label: string;
-    icon: JSX.Element;
-    onClick: () => void;
-}
+// interface FilterButtonProps {
+//     label: string;
+//     icon: JSX.Element;
+//     onClick: () => void;
+// }
 
 const FilterButton: React.FC<FilterButtonProps> = ({ label, icon, onClick }) => (
     <button className="flex flex-col group items-center" onClick={onClick}>
@@ -51,9 +51,9 @@ export const MapView: React.FC = () => {
     const [map, setMap] = useState<mapboxgl.Map | null>(null);
     const [markers, setMarkers] = useState<mapboxgl.Marker[]>([]);
 
-    const handleFilterClick = (selectedFilter: PlacesCategories) => {
-        setFilter(selectedFilter);
-    };
+    // const handleFilterClick = (selectedFilter: PlacesCategories) => {
+    //     setFilter(selectedFilter);
+    // };
 
     useEffect(() => {
         mapboxgl.accessToken = 'pk.eyJ1Ijoib2xpdmExMjMiLCJhIjoiY2wzdDZzMHh1MXh6ajNib2VhcHR4dWx3ZSJ9.e1SYRWtDEVsfVaId3w5tAg';

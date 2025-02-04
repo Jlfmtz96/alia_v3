@@ -1,12 +1,12 @@
 'use client'
 
-import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const modelos = [
   {
@@ -172,9 +172,9 @@ export default function ModelosSlider() {
                       </div>
                       )}
                   </div>
-                  <a href={modelo.link} className="text-white underline inline-block">
+                  <Link href={modelo.link} className="text-white underline inline-block">
                       Ver más
-                  </a>
+                  </Link>
                 </div>
             </div>
           </SwiperSlide>

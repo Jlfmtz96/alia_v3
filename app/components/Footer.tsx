@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -9,28 +10,27 @@ export default function Footer() {
             </div>
             <div className="col-span-2 row-start-2 my-4 lg:my-0">
                 <div className="w-28 md:w-44 h-auto">
-                    <a href="/">
+                    <Link href="/">
                         <Image src="/images/Aliia_logo_blanco.png" alt="" width={500} height={500}/>
-                        {/* <img src={logo.src} alt="" className="w-full h-full"> */}
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="col-start-3 row-start-2 text-white flex flex-col mb-4 lg:mb-0">
                 <span className="font-light text-sm">Redes Sociales</span>
-                <a href="">Facebook</a>
-                <a href="">Instagram</a>
+                <Link href={""}>Facebook</Link>
+                <Link href={""}>Instagram</Link>
             </div>
             <div className="col-start-4 row-start-2 text-white flex flex-col mb-4 lg:mb-0">
                 <span className="font-light text-sm">Contactanos</span>
-                <a href="">(444) 447-7205</a>
-                <a href="">Prol. Constituyentes Ote., CP 76246 El Marqués, Qro</a>
+                <Link href={""}>(444) 447-7205</Link>
+                <Link href={""}>Prol. Constituyentes Ote., CP 76246 El Marqués, Qro</Link>
             </div>
         </div>
         <div className="text-xs lg:text-center text-white mb-2">
             *Imágenes y renders mostrados en este sitio son estrictamente de carácter ilustrativo. Los proyectos podrán cambiar o sufrir de modificaciones de acuerdo al desarrollador. Sujeto a cambios sin previo aviso. Consulta prototipos y amenidades disponibles con tu asesor.
         </div>
         <div className="text-xs lg:text-sm text-center text-white">
-            Copyright 2025 Alía Residencial | <a href="" className="font-medium">Aviso de Privacidad</a>
+            Copyright 2025 Alía Residencial | <Link href="" className="font-medium">Aviso de Privacidad</a>
         </div>
     </footer>
   );

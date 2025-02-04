@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes, FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaBars, FaTimes, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 // Definimos los tipos para los enlaces
 type NavLink = {
@@ -85,15 +85,15 @@ export default function Navbar() {
 
         {/* Redes sociales (solo desktop) */}
         <div className="hidden md:flex space-x-4">
-          <a href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
+          <Link href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
             <FaFacebook />
-          </a>
-          <a href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
+          </Link>
+          <Link href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
             <FaInstagram />
-          </a>
-          <a href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
+          </Link>
+          <Link href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
             <FaWhatsapp />
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger button para móvil */}

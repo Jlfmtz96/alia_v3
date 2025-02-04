@@ -27,12 +27,12 @@ export default function Story() {
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("click", handleClick);
 
-    let storyTimeout = setTimeout(changeStory, storyDuration);
+    // let storyTimeout = setTimeout(changeStory, storyDuration);
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("click", handleClick);
-      clearTimeout(storyTimeout);
+      // clearTimeout(storyTimeout);
     };
   }, [activeStory, direction]);
 
@@ -143,85 +143,85 @@ const changeStory = () => {
     }
   };
 
-  const animateNewImage = (imgContainer: HTMLDivElement) => {
-    gsap.set(imgContainer, {
-      clipPath:
-        direction === "next"
-          ? "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)"
-          : "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
-    });
+  // const animateNewImage = (imgContainer: HTMLDivElement) => {
+  //   gsap.set(imgContainer, {
+  //     clipPath:
+  //       direction === "next"
+  //         ? "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)"
+  //         : "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+  //   });
 
-    gsap.to(imgContainer, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 1,
-      ease: "power4.inOut",
-    });
-  };
+  //   gsap.to(imgContainer, {
+  //     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+  //     duration: 1,
+  //     ease: "power4.inOut",
+  //   });
+  // };
 
-  const animateImageScale = (
-    currentImg: HTMLImageElement,
-    upcomingImg: HTMLImageElement
-  ) => {
-    gsap.fromTo(
-      currentImg,
-      {
-        scale: 1,
-        rotate: 0,
-      },
-      {
-        scale: 2,
-        rotate: direction === "next" ? -25 : 25,
-        duration: 1,
-        ease: "power4.inOut",
-        onComplete: () => {
-          currentImg.parentElement?.remove();
-        },
-      }
-    );
-    gsap.fromTo(
-      upcomingImg,
-      {
-        scale: 2,
-        rotate: direction === "next" ? 25 : -25,
-      },
-      {
-        scale: 1,
-        rotate: 0,
-        duration: 1,
-        ease: "power4.inOut",
-      }
-    );
-  };
+  // const animateImageScale = (
+  //   currentImg: HTMLImageElement,
+  //   upcomingImg: HTMLImageElement
+  // ) => {
+  //   gsap.fromTo(
+  //     currentImg,
+  //     {
+  //       scale: 1,
+  //       rotate: 0,
+  //     },
+  //     {
+  //       scale: 2,
+  //       rotate: direction === "next" ? -25 : 25,
+  //       duration: 1,
+  //       ease: "power4.inOut",
+  //       onComplete: () => {
+  //         currentImg.parentElement?.remove();
+  //       },
+  //     }
+  //   );
+  //   gsap.fromTo(
+  //     upcomingImg,
+  //     {
+  //       scale: 2,
+  //       rotate: direction === "next" ? 25 : -25,
+  //     },
+  //     {
+  //       scale: 1,
+  //       rotate: 0,
+  //       duration: 1,
+  //       ease: "power4.inOut",
+  //     }
+  //   );
+  // };
 
-  const resetIndexHighlight = (index: number) => {
-    const highlight = document.querySelectorAll(".index .index-highlight")[index];
-    gsap.killTweensOf(highlight);
-    gsap.to(highlight, {
-      width: direction === "next" ? "100%" : "0%",
-      duration: 0.3,
-      onStart: () => {
-        gsap.to(highlight, {
-          transformOrigin: "right center",
-          scaleX: 0,
-          duration: 0.3,
-        });
-      },
-    });
-  };
+  // const resetIndexHighlight = (index: number) => {
+  //   const highlight = document.querySelectorAll(".index .index-highlight")[index];
+  //   gsap.killTweensOf(highlight);
+  //   gsap.to(highlight, {
+  //     width: direction === "next" ? "100%" : "0%",
+  //     duration: 0.3,
+  //     onStart: () => {
+  //       gsap.to(highlight, {
+  //         transformOrigin: "right center",
+  //         scaleX: 0,
+  //         duration: 0.3,
+  //       });
+  //     },
+  //   });
+  // };
 
-  const animateIndexHighlight = (index: number) => {
-    const highlight = document.querySelectorAll(".index .index-highlight")[index];
-    gsap.set(highlight, {
-      width: "0%",
-      scaleX: 1,
-      transformOrigin: "right center",
-    });
-    gsap.to(highlight, {
-      width: "100%",
-      duration: storyDuration / 1000,
-      ease: "none",
-    });
-  };
+  // const animateIndexHighlight = (index: number) => {
+  //   const highlight = document.querySelectorAll(".index .index-highlight")[index];
+  //   gsap.set(highlight, {
+  //     width: "0%",
+  //     scaleX: 1,
+  //     transformOrigin: "right center",
+  //   });
+  //   gsap.to(highlight, {
+  //     width: "100%",
+  //     duration: storyDuration / 1000,
+  //     ease: "none",
+  //   });
+  // };
 
 //   const cleanUpElements = () => {
 //     const profileNameDiv = document.querySelector(".profile-name");
