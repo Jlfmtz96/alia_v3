@@ -4,13 +4,22 @@ import Navbar from "@/app/components/Navbar";
 import Layout from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata, ResolvingMetadata } from "next"; // Importa tipos de Next.js
 
-// Asegúrate de que la función sea asíncrona y que uses `await` al acceder a los parámetros
-const ModelPage = async ({ params }: { params: { modelo: string } }) => {
-  // Espera el parámetro `modelo`
-  const { modelo } = await params;
+// Define el tipo de los parámetros
+interface ModelPageParams {
+  modelo: string;
+}
 
-  const model = houseModels.find((m) => m.id === modelo);
+// Define el tipo de las props
+interface ModelPageProps {
+  params: ModelPageParams;
+}
+
+// Asegúrate de que tu función sea asíncrona
+const ModelPage = async ({ params }: ModelPageProps) => {
+  // Busca el modelo en los datos
+  const model = houseModels.find((m) => m.id === params.modelo);
 
   if (!model) {
     return <div>Modelo no encontrado</div>;
