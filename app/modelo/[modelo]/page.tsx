@@ -6,10 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata, ResolvingMetadata } from "next"; // Importa los tipos de Next.js
 
-// Define el tipo de los parámetros
-interface ModelPageParams {
-  modelo: string;
-}
+// Define el tipo de los parámetros como una promesa
+type ModelPageParams = Promise<{ modelo: string }>;
 
 // Define el tipo de las props
 interface ModelPageProps {
@@ -21,8 +19,8 @@ export async function generateMetadata(
   { params }: { params: ModelPageParams },
   parent: ResolvingMetadata // eslint-disable-line @typescript-eslint/no-unused-vars
 ): Promise<Metadata> {
-  // Accede a los parámetros
-  const modelo = params.modelo;
+  // Accede a los parámetros (resuelve la promesa)
+  const { modelo } = await params;
 
   // Busca el modelo en los datos
   const model = houseModels.find((m) => m.id === modelo);
@@ -46,8 +44,11 @@ export async function generateMetadata(
 
 // Componente de la página
 const ModelPage = async ({ params }: ModelPageProps) => {
+  // Resuelve la promesa de params
+  const { modelo } = await params;
+
   // Busca el modelo en los datos
-  const model = houseModels.find((m) => m.id === params.modelo);
+  const model = houseModels.find((m) => m.id === modelo);
 
   if (!model) {
     return <div>Modelo no encontrado</div>;
