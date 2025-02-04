@@ -4,7 +4,6 @@ import Navbar from "@/app/components/Navbar";
 import Layout from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata, ResolvingMetadata } from "next"; // Importa tipos de Next.js
 
 // Define el tipo de los parámetros
 interface ModelPageParams {
