@@ -47,7 +47,7 @@ const placesCoordinates: Record<PlacesCategories, Place[]> = {
 // );
 
 export const MapView: React.FC = () => {
-    const [filter, setFilter] = useState<PlacesCategories | null>(null);
+    const [filter] = useState<PlacesCategories | null>(null);
     const [map, setMap] = useState<mapboxgl.Map | null>(null);
     const [markers, setMarkers] = useState<mapboxgl.Marker[]>([]);
 

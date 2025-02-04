@@ -9,7 +9,7 @@ export default function Story() {
   const [activeStory, setActiveStory] = useState(0);
   const [direction, setDirection] = useState<"next" | "prev">("next");
   const [currentImage, setCurrentImage] = useState(stories[0].storyImg); // Estado para la imagen principal
-  const storyDuration = 4000;
+  // const storyDuration = 4000;
   const contentUpdateDelay = 0.4;
   const imgContainerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
