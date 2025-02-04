@@ -85,13 +85,13 @@ export default function Navbar() {
 
         {/* Redes sociales (solo desktop) */}
         <div className="hidden md:flex space-x-4">
-          <Link href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
+          <Link href="https://www.facebook.com/casasdomum" target='_blank' className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
             <FaFacebook />
           </Link>
-          <Link href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
+          <Link href="https://www.instagram.com/casas_domum/" target='_blank' className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
             <FaInstagram />
           </Link>
-          <Link href="#" className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
+          <Link href="https://wa.me/5214424750573" target='_blank' className={`${scrolling ? "text-black" : "text-white"} hover:text-[#dc2c81]`}>
             <FaWhatsapp />
           </Link>
         </div>

@@ -9,14 +9,21 @@ export default function Nosotros() {
                 cumplan el sueño de tener un hogar propio.</span>
             </p>
         </div>
+        
+        <div className="row-start-2 mt-4 lg:mt-0">
+            <p className="md:text-xl">
+                Descubre un estilo de vida exclusivo con residencias diseñadas para ofrecerte comodidad, privacidad y tranquilidad,
+                rodeadas de áreas verdes y extraordinarias amenidades.
+            </p>
+        </div>
 
         <div className="row-start-2 mt-4 lg:mt-0">
-            <div className="flex justify-between">
+            <div className="grid grid-cols-3 gap-6">
                 <div className="">
-                    <h6 className="text-xs md:text-xl"><span className="text-base md:text-3xl font-semibold">más de <span className="text-2xl md:text-6xl">6</span></span> <br />Años de experiencia</h6>
+                    <h6 className="text-xs md:text-lg"><span className="text-base md:text-3xl font-semibold">más de <span className="text-2xl md:text-6xl">6</span></span> <br />Años de experiencia</h6>
                 </div>
                 <div>
-                    <h6 className="text-xs md:text-xl"><span className="text-base md:text-3xl font-semibold">más de <span className="text-2xl md:text-6xl">90</span></span> <br />Residencias disponibles</h6>
+                    <h6 className="text-xs md:text-lg"><span className="text-base md:text-3xl font-semibold">más de <span className="text-2xl md:text-6xl">90</span></span> <br />Residencias disponibles</h6>
                 </div>
                 <div className="w-20 md:w-40">
                     <Image
@@ -32,12 +39,6 @@ export default function Nosotros() {
             </div>
         </div>
 
-        <div className="row-start-2 mt-4 lg:mt-0">
-            <p className="md:text-xl text-right">
-                Descubre un estilo de vida exclusivo con residencias diseñadas para ofrecerte comodidad, privacidad y tranquilidad,
-                rodeadas de áreas verdes y extraordinarias amenidades.
-            </p>
-        </div>
       </section>
     );
   }

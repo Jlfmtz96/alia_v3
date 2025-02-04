@@ -5,7 +5,7 @@ import FormContact from "./FormContact";
 
 export default function Contacto() {
   return (
-    <div className="relative h-screen flex items-center justify-center">
+    <div id="contacto" className="relative h-screen flex items-center justify-center">
       {/* Imagen de fondo */}
       <div className="absolute inset-0 z-0">
         <Image
