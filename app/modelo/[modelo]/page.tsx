@@ -19,7 +19,7 @@ interface ModelPageProps {
 // Función para generar metadatos dinámicos
 export async function generateMetadata(
   { params }: { params: ModelPageParams },
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata // eslint-disable-line @typescript-eslint/no-unused-vars
 ): Promise<Metadata> {
   // Accede a los parámetros
   const modelo = params.modelo;
