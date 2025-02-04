@@ -5,17 +5,12 @@ import Layout from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
 
-// Define el tipo de los parámetros
-interface PageProps {
-  params: {
-    modelo: string;
-  };
-}
+// Asegúrate de que la función sea asíncrona y que uses `await` al acceder a los parámetros
+const ModelPage = async ({ params }: { params: { modelo: string } }) => {
+  // Espera el parámetro `modelo`
+  const { modelo } = await params;
 
-// Asegúrate de que tu función sea asíncrona si deseas usar `await` para otros casos dentro de tu lógica
-const ModelPage = async ({ params }: PageProps) => {
-  // No es necesario usar `await` aquí, ya que `params` está disponible sin promesas en Next.js 13
-  const model = houseModels.find((m) => m.id === params.modelo);
+  const model = houseModels.find((m) => m.id === modelo);
 
   if (!model) {
     return <div>Modelo no encontrado</div>;
