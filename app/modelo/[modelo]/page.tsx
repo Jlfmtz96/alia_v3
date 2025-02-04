@@ -1,12 +1,13 @@
-// app/modelos/[modelo]/page.tsx
-import { houseModels } from "../../data/houseModels"; // Asegúrate de que esta ruta sea correcta
+import { houseModels } from "../../data/houseModels"; 
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/Navbar";
 import Layout from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ModelPage({ params }: { params: { modelo: string } }) {
+// Asegúrate de que tu función sea asíncrona si deseas usar `await` para otros casos dentro de tu lógica
+const ModelPage = async ({ params }: { params: { modelo: string } }) => {
+  // No es necesario usar `await` aquí, ya que `params` está disponible sin promesas en Next.js 13
   const model = houseModels.find((m) => m.id === params.modelo);
 
   if (!model) {
@@ -29,8 +30,8 @@ export default function ModelPage({ params }: { params: { modelo: string } }) {
           <Image
             src={model.images.hero}
             alt={model.name}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             className="opacity-40"
           />
         </div>
@@ -81,7 +82,7 @@ export default function ModelPage({ params }: { params: { modelo: string } }) {
                   alt={`Plano ${index + 1}`}
                   width={120}
                   height={300}
-                  objectFit="contain"
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             ))}
@@ -114,4 +115,6 @@ export default function ModelPage({ params }: { params: { modelo: string } }) {
       <Footer />
     </Layout>
   );
-}
+};
+
+export default ModelPage;
